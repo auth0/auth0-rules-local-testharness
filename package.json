@@ -17,6 +17,7 @@
   ],
   "scripts": {
     "test": "mocha tests",
+    "tdd": "mocha --watch tests",
     "clean": "rimraf lib",
     "build": "cross-env BABEL_ENV=production babel ./index.js --out-dir lib",
     "prepublishOnly": "npm run test && npm run clean && npm run build"

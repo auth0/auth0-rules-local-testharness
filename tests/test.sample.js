@@ -58,6 +58,5 @@ describe('auth0-requestbin', function () {
     };
 
     runInLocalSandbox(script, [user, context, callback], configuration);
-
   });
 })

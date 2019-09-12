@@ -1,6 +1,8 @@
 # What is it?
 
-The *auth0-rules-local-testharness* library provides an easy way to deploy, execute, and test the output of Auth0 Rules using a local sandbox environment. It is very simple to use, and requires under 5 minutes to get started testing your Auth0 Rules! 
+The *auth0-rules-local-testharness* library provides an easy way to deploy, execute, and test the output of `Auth0 Rules` using a local sandbox environment. It is very simple to use, and requires under 5 minutes to get started testing your Auth0 Rules! 
+
+You should write your `Auth0 Rules` and add them to this project (similar to the `/examples/requestbin.js` which is an example `Auth0 Rule`) and then write tests against the new rules you added. This style of usage can be seen in `/test/test.sample.js`. After your tests have been writen simple run `npm i` and then `npm run test` or `npm run tdd`. 
 
 See here for further documentation on [Auth0 Rules](https://auth0.com/docs/rules).
 
