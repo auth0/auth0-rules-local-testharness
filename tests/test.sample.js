@@ -25,7 +25,7 @@ var context = {
 };
 
 var configuration = {
-  requestBinUrl: 'http://requestbin.fullcontact.com/auth0-rule-test'
+  requestBinUrl: 'http://requestbin.fullcontact.com/auth0-rule-test/'
 };
 
 
@@ -39,7 +39,7 @@ describe('auth0-requestbin', function () {
 
 
   it('should post to request bin successfully', function (done) {
-     nock(configuration.requestBinUrl).post('', body).reply(200);
+     nock(configuration.requestBinUrl).post('/', body).reply(200);
 
       var callback = function (err, response, context) {
         expect(response).to.be.equal(user);
@@ -50,7 +50,7 @@ describe('auth0-requestbin', function () {
     });
 
   it('should fail to post to request bin', function (done) {
-    nock(configuration.requestBinUrl).post('', body).reply(500);
+    nock(configuration.requestBinUrl).post('/', body).reply(500);
 
     var callback = function (err, response, context) {
       expect(err).to.be.null;
