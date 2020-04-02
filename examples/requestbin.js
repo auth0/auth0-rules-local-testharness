@@ -12,7 +12,7 @@
  * You can run this rule by itself, or paste it into an existing rule.
  *
  */
-function(user, context, callback) {
+function dumpRules(user, context, callback) {
   // https://auth0.com/docs/rules/current/context
   const context_whitelist = ['clientID', 'connection', 'stats'];
   const context_filtered = _.pick(context, context_whitelist);

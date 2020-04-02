@@ -29,6 +29,7 @@
     "auth0-authz-rules-api": "^3.2.0",
     "cb": "^0.1.0",
     "ejs": "^2.5.5",
+    "lodash": "^4.17.15",
     "request": "^2.79.0",
     "winston": "^2.3.1"
   },

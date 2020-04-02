@@ -43,7 +43,7 @@ var runInLocalSandbox = (ruleScripts, user, context, configuration) => {
       } else {
         // the shared context to use immutable contexts between rules
         var vmContext = vm.createContext(Object.assign(sharedContext, {
-          // set the callback that is called on completion (succes/fail) of every rule
+          // set the callback that is called on completion (success/fail) of every rule
           callback: (error, user, context) => {
 
             if (error) {
@@ -51,7 +51,7 @@ var runInLocalSandbox = (ruleScripts, user, context, configuration) => {
               fail(error);
             } else {
               // in case of no error, process the rest of the rules
-              runScripts(_.rest(scripts), sharedContext);
+              runScripts(_.drop(scripts), sharedContext);
             }
           }
         }));
