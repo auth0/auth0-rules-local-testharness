@@ -26,7 +26,7 @@
   "dependencies": {
     "assert": "^1.4.1",
     "auth0": "^2.9.1",
-    "auth0-authz-rules-api": "^3.2.0",
+    "auth0-authz-rules-api": "^4.0.0",
     "cb": "^0.1.0",
     "ejs": "^2.5.5",
     "lodash": "^4.17.15",
