@@ -1,6 +1,7 @@
 var vm = require('vm'),
   _ = require('lodash');
 
+var util = require('util');
 
 var requireWithVersionSupport = (moduleName) => {
   // moduleName = mongo@2.1
@@ -10,12 +11,27 @@ var requireWithVersionSupport = (moduleName) => {
   return require(name);
 };
 
-
 var runInLocalSandbox = (ruleScripts, user, context, configuration) => {
 
   var asRunnable = (script) => `(${script}).call(null, user, context, callback)`;
 
+  var ManagementClient = require('auth0').ManagementClient;
+  var managementClient = new ManagementClient({
+    clientId: configuration.clientId,
+    clientSecret: configuration.clientSecret,
+    domain: configuration.domain,
+    scope: "update:users_app_metadata"
+  });
   var globalContext = {
+    auth0: {
+      accessToken: configuration.accessToken,
+      baseUrl: util.format('https://%s/api/v2', configuration.domain),
+      domain: configuration.domain,
+      users: {
+        updateUserMetadata: managementClient.users.updateUserMetadata,
+        updateAppMetadata: managementClient.users.updateAppMetadata
+      }
+    },
     global: {}
   };
 
